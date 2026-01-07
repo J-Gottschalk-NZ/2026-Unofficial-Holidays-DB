@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  margin: 20px;
+}
+
+.featured-image {
+  display: block;
+  width: auto;
+  height: 325px;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 0;
+  transition: .5s ease;
+  z-index: 10;
+}
+
+.container:hover .overlay {
+  width: 475px;
+
+  /* needed so image is completely covered by card */
+  background-color: var(--dark-purple);  
+}
+
+.card-container {
+  font-size: 20px;
+  position: absolute;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.char-details:hover {
+  width: 450px;   /* makes cards full width on hover - might break grid?? */
+}

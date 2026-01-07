@@ -1,0 +1,92 @@
+.search {
+    background:var(--white);
+    width: 200px;
+}
+
+input, textarea, select, button {
+    font-family: "Libre Baskerville", serif;
+    font-size: 14px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid var(--black);
+    box-sizing: border-box; 
+    width: 100%;
+}
+
+
+.quicksearch {
+    border-radius: 5px 0 0 5px; 
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.submit::-moz-focus-inner { 
+    border: 0;
+}
+
+
+.submit {
+    position:relative;
+    width: 45px;
+    
+    left:-5px;
+    background-color: var(--light-purple); 
+    color:var(--black);
+    border: 1px solid var(--black);
+    border-radius: 0 5px 5px 0;   
+    display: inline-block;
+    padding: 10px;
+    padding-bottom: 13px;
+}
+
+.submit:hover {
+    background-color: var(--black);
+    color: var(--light-purple);
+}
+
+/* Admin Form styling... */
+.admin-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.big-form {
+    max-width: 1000px;
+    margin: auto;}
+
+.form-submit{
+   
+    background-color: var(--light-purple); 
+    color: var(--black);
+    border: 1px solid var(--black);
+    border-radius: 5px;   
+    width: 100%;
+
+}
+
+.form-submit:hover {
+    background-color:var(--hover-peach);
+}
+
+/* Filter box css */
+.advanced {
+    background-color: var(--white);
+    color: var(--black);
+    width: 275px;
+    margin-bottom: 10px;     /* adds space below form elements */
+}
+
+.advanced-button {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.advanced-search {
+    background-color: var(--light-purple);
+    color: var(--black);
+}
+
+.advanced-search:hover{
+    background-color: var(--hover-peach);
+}

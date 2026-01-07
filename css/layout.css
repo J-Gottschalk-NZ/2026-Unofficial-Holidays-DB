@@ -1,0 +1,53 @@
+.wrapper {
+    min-height: 100%;
+    display: grid;
+
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto 1fr auto;
+
+    grid-template-areas:
+        "logo-banner logo-banner "
+        "nav log-in-out"
+        "main main"
+        "footer footer";
+    }
+
+    .logo-banner{
+        grid-area: logo-banner;
+        align-content: flex-start;
+        align-items: center;
+    }
+
+    nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;       
+    }
+
+    .log-in-out {
+        grid-area: log-in-out;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    main {
+        grid-area: main;
+        }
+
+    footer {
+        grid-area: footer;
+        background-color: var(--charcoal);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 1380px) {
+        nav{
+            align-items: flex-start;        
+
+        }
+
+    }
+
+

@@ -1,0 +1,46 @@
+/* CSS for advanced search panel from W3C (edited)! */
+
+/* The panel menu */
+.panel {
+	width: 0;           /* hidden @start, expanded with JS */
+	position: fixed;    /* Stay in place */
+	z-index: 1;         /* Stay on top */
+	top: 150px;         /* shift down (under nav bar) */
+	left: 0;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding: 0;
+	transition: 0.4s;   /* 0.4 second slide transition*/
+	background-color: var(--black);
+}
+
+/* Add padding to  panel */
+.PanelWrapper {
+	padding: 10px;
+}
+
+/* Put heading and close cross next to each other */
+.panel-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Cross & button link Styling */
+.panel a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	color: var(--error-back);
+	transition: 0.3s;
+
+}
+
+/* Cross & button link mouse over */
+.panel a:hover {
+	color: #f56969;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+	top: 0;
+	font-size: 36px;
+}
+

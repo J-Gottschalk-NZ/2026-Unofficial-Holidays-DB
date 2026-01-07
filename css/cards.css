@@ -1,0 +1,116 @@
+.all-cards {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, 450px);
+    gap: 40px;
+
+    align-content: start;
+}
+
+.char-details{
+ 
+    background-color: var(--white);
+    color: var(--dark-purple);
+    width: 100%;
+    border: 4px solid var(--white);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15p var(--black);
+    text-align: left;
+
+}
+
+.character-name {
+    font-size: 24pt;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--med-purple);
+    color: var(--white);
+}
+
+.play-title{
+    display: flex;
+    align-items: center;
+
+    background-color: var(--light-purple);
+    padding-left: 20px;
+
+    font-size: 18pt;
+    height: 60px;
+}
+
+/* Set category icon to 50px */
+.play-title a img, .icon {
+    border: 2px solid var(--dark-purple);
+    padding: 5px;
+    border-radius: 10px;
+    width: 50px;
+    margin-right: 20px;
+    background-color: var(--light-purple);
+}
+
+.play-title a img:hover, .icon:hover {
+    border: 2px solid var(--black);
+    background-color: var(--hover-peach);
+
+}
+
+.play-title a{
+    text-decoration: none;
+    color: var(--dark-purple)
+}
+
+.play-title a.play:hover{
+    background-color: var(--dark-purple);
+    color: var(--white);
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.icon-row{
+    display: flex;
+    padding: 10px;
+    padding-top: 25px;
+
+    align-content: center;
+    justify-content: space-between;
+
+}
+
+/* Clickable icon styling */
+.icon-row a img {
+    border: 2px solid var(--black);
+    padding: 15px;
+    border-radius: 10px;
+    width: 45px;
+    background-color: var(--hover-peach);
+}
+
+.icon-row a img:hover {
+    border: 1px solid var(--dark-purple);
+    background-color: var(--light-purple);
+}
+
+.trait-tags {
+    display: flex;
+    margin: 5px;
+}
+
+.trait-tags a{
+    margin-right: 5px;
+    background-color: var(--light-purple);
+    color: var(--dark-purple);
+    border: 2px solid var(--dark-purple);
+
+    border-radius: 5px;
+    text-decoration: none;
+
+    font-size: 105%;
+}
+
+.trait-tags a:hover{
+    background-color: var(--dark-purple);
+    color: var(--white);
+    font-weight: bold;
+}

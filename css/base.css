@@ -1,0 +1,222 @@
+/* Set up colour variables */
+:root{
+    --dark-purple: #5E3163;
+    --med-purple: #8e6593;
+    --light-purple: #cba7cf;
+    --charcoal: #333;
+    --error-back: #F7BEBE;
+    --error-text: #660000; 
+    --hover-peach: #FCD495;
+    --visited-grey: #c6c6c6;
+    --light-grey: #dedede;
+    --black: #000;
+    --white: #fff;
+}
+
+/* Tiny classes */
+.flex {display: flex;}
+.center {justify-content: center; align-items: center;}
+.text-large {font-size: 150%;}
+.pad-20 {padding: 20px;}
+.pad-10 {padding: 10px;}
+.pad-10-round {padding: 10px; border-radius: 10px;}
+.marg-bottom {margin-bottom: 10px;}
+
+/* Set viewport to height of 100% so that footer sticks to the bottom */
+html, body{
+        height: 100%;    
+}
+
+/* Element Styling */
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--dark-purple);
+    color: var(--white);
+
+    font-family: "Libre Baskerville", serif;
+}
+
+h1 {
+   font-family: "IM Fell English", serif;
+   font-size: 400%;
+}
+
+h2 {
+  font-size: 200%;
+}
+
+/*  wrapper to hold cards and message used on confirm delete page for example. */
+.single-holder, .no-results-message {
+  display: flex;
+  justify-content: start;
+  column-gap: 10px;
+}
+
+.single-holder > * {
+  max-width: 450px;       /* ensures cards/messages never exceed 450px */
+}
+
+
+.error {
+  background-color: var(--error-back);
+  color: var(--error-text);
+  border: 2px solid var(--error-text);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.logo-image{
+    background-color: var(--white);
+    height: 75px;
+    width: auto;
+    margin-right: 20px;
+
+}
+
+.msg-image{
+  display: block;   /* allows image to be centered correctly*/
+  width: 250px;
+  margin: auto;
+}
+
+.nav-button{
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.nav-button:link, .nav-button:visited{
+    color: var(--dark-purple);
+    background-color: var(--light-purple);
+}
+
+.nav-button:hover{
+    background-color: var(--hover-peach);
+}
+
+/* Style 'inactive' button (not clickable, has title) */
+a.grey-button:link, a.grey-button:hover, a.grey-button:visited {
+  background-color: var(--light-grey);
+  color: #888;
+}
+
+
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--light-grey);
+}
+
+.hamburger {
+  display: none;
+  background-color: var(--light-purple);
+  color: var(--dark-purple);
+}
+
+.hamburger:hover{
+    background-color: var(--hover-peach);
+    color: var(--dark-purple);
+}
+
+/* Footer link styling (left hand side) */
+footer a {
+  color: var(--white);
+  font-weight: bold;
+  text-decoration: none;
+  padding-right: 50px;
+}
+
+footer a:hover{
+  color: var(--hover-peach);
+}
+
+.all-credits{
+  display: flex;
+  column-gap: 40px;
+  align-content: center;
+}
+
+a.credits{
+  color: var(--light-purple);
+  font-weight: bold;
+}
+
+a.credits:visited{
+  color: var(--light-grey);
+}
+
+/* Remember to put hover rule after link / visited! */
+a.credits:hover{
+  color: var(--hover-peach);
+}
+
+.error-image
+{
+    border-radius: 10px;
+    max-width: 350px;
+    align-self: center;   /* prevents image being distorted */
+}
+
+/* Icon Page styling... */
+
+a.legend {
+  text-decoration: none;
+  color: var(--dark-purple);
+  padding-right: 20px;
+}
+
+.icon-list {
+  display: grid;
+  height: fit-content;
+
+  color: var(--black);
+  background-color: var(--white);
+}
+
+/* Vertically aligns icon and image (which are inside the a tag) */
+.legend {
+  display: flex;
+  align-items: center;
+}
+
+.legend:hover {
+  background-color: var(--hover-peach);
+}
+
+.icon-list .row:nth-child(odd) {
+  background-color: var(--light-grey); /* Light gray for odd rows */
+}
+
+.icon-list .row:nth-child(even) {
+  background-color: var(--white); /* White for even rows */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1380px) {
+
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    height: auto;
+  }
+
+  .nav-items.show {
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.hamburger {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+
+}
