@@ -1,0 +1,202 @@
+/* Set viewport to height of 100% so that footer sticks to the bottom */
+html, body{
+        height: 100%;    
+}
+
+:root{
+/* Core palette */ 
+--white: #fff;
+
+--grey-400: #868686;
+--grey-900: #2f2e2e;
+
+--purple-200: #d3bddb;
+--purple-600: #714780;
+
+--orange-200: #fef4cd;
+--orange-500: #fde279;
+
+--red-200: #ffbbbb;
+--red-800: #990000;
+
+/* Text */
+--color-text-default: var(--grey-900);
+--text-on-primary: var(--white);
+
+/* Layout */
+--color-background: var(--orange-200);
+--color-surface: var(--white);
+--color-surface-secondary: var(--purple-200);
+--color-inverse-background: var(--grey-900);
+
+/* Brand  */
+--color-brand-primary: var(--purple-600);
+--color-accent: var(--purple-600);
+--color-accent-hover: var(--grey-900);
+--color-accent-secondary: var(--orange-500);
+
+/* State */
+--color-error-bg: var(--red-200);
+--color-error-text: var(--red-800);
+
+}
+
+body{
+    background-color: var(--color-background);
+    font-family: "Open Sans", sans-serif;
+    margin: 0;  /* add this rule to get rid of margin around page */
+
+}
+
+/* Layout... */
+.wrapper {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer"
+    ;
+    
+}
+
+header{
+    grid-area: header;
+    background-color: var(--color-brand-primary);
+    color: var(--text-on-primary);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+nav{
+    grid-area: nav;
+    background-color: var(--color-surface-secondary);
+}
+
+main{
+    grid-area: main;
+    background-color: var(--color-background);
+}
+
+footer{
+    grid-area: footer;
+    text-align: right;
+    background-color: var(--color-brand-primary);
+    color: var(--text-on-primary);
+}
+
+h1{
+    font-family: "Agbalumo", system-ui;
+    font-size: 300%;
+}
+
+.logo{
+    padding-right: 20px;
+    transform: rotate(-10deg);
+    height: 100px;
+
+}
+
+/* links in page */
+a{
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+}
+
+a.search-button{
+    display: block;
+}
+
+.button-link {
+    display: flex;
+    justify-content: space-between;
+
+    border-radius: 4px;
+    background-color: var(--color-accent);
+    color: var(--text-on-primary);
+    padding: 10px 30px;
+}
+
+nav a{
+    color: var(--text-on-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button-link:hover{
+    color: var(--text-on-primary);
+    background-color: var(--color-accent-hover);
+}
+
+.full-button{
+    width: 200px;
+}
+
+.search{
+    width: 200px;
+}
+
+.search-container{
+    display: flex;
+    align-items: stretch;
+}
+
+/* Results styling */
+
+.all-cards {
+    display: flex;
+    flex-wrap: wrap;    /* wraps cards inside main div */
+    gap: 20px;              /* space between cards */
+    justify-content: center;
+}
+
+.results{
+
+    max-width: 450px;
+    min-width: 350px;
+
+    padding: 20px;
+
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-accent-secondary);
+}
+
+.category {
+
+    font-weight: bold;
+
+    color: var(--color-brand-primary);
+    background-color: var(--color-surface-secondary);
+    border: 2px solid var(--color-brand-primary);
+
+    padding: 5px;
+    margin-right: 10px;     /* space between tag and text */
+
+}
+
+.results-image {
+    /* center image */
+    display: block;
+    margin: auto;
+
+    /* size image */
+    width: 75%;
+    height: auto;
+    padding: 10px;
+}
+
+
+/* Tiny classes */
+.pad-20{padding: 20px;}
+.bottom-spacing{margin-bottom: 10px;}
+.radius-10{border-radius: 10px;}
