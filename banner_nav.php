@@ -13,7 +13,7 @@
         </div>  <!-- / show all button div -->
     </a>
 
-    <a href="#">
+    <a href="random.php">
         <div class="button-link full-button bottom-spacing">
             <span class="button-text">Random</span>
             <span class="button-icon"><i class="fa-solid fa-shuffle"></i></span>
@@ -23,7 +23,8 @@
     <hr>
 
     <!-- Keyword Search -->
-     <form>
+    <form method="post" action="keyword.php" enctype="multipart/form-data">
+
 
         <div class="search-container bottom-spacing">
             <input class="search" type="text" name="keyword_search" required value="" placeholder="keyword">
@@ -36,27 +37,45 @@
 
     </form>
 
-    <!-- Topic Search -->
-    <form>
+    <!-- Category Search -->
+    <form class="search form" method="post" action="category.php" enctype="multipart/form-data">
 
     <div class="search-container bottom-spacing">
 
-        <select name="topic_search" class="search" required>
+        <?php
+            $dropdown_sql = "SELECT DISTINCT `category` FROM `holidays` ORDER BY `holidays`.`category` ASC ";
+            $dropdown_query = mysqli_query($dbconnect, $dropdown_sql);
+
+        ?>
+
+        <select name="category_search" class="search" required>
             <option value="" selected disabled>Choose...</option>
-            <option value="first thing">First thing</option>
-            <option value="second thing">Second thing</option>
+
+            <?php 
+                while($dropdown_rs=mysqli_fetch_assoc($dropdown_query)) {
+
+                $category = htmlspecialchars($dropdown_rs['category']);
+
+
+            ?>
+                <option value="<?= $category; ?>"><?= $category; ?></option>
+            <?php
+                }   // end of option while
+            ?>
+
+
         </select>
 
-        <button class="button-link" type="submit" name="topic">
+        <button class="button-link" type="submit" name="category">
             <span><i class="fa-solid fa-magnifying-glass"></i></span>
         </button>
 
-    </div>  <!-- / search container, topic -->
+    </div>  <!-- / search container, category -->
 
     </form>
 
     <!-- Date Search -->
-     <form>
+    <form class="search form" method="post" action="date.php" enctype="multipart/form-data">
 
         <div class="search-container bottom-spacing">
             <input class="search" type="date" name="date_search" required value="" >

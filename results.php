@@ -3,6 +3,9 @@
 
 <?php
 
+// Only use this if your images are hosted elsewhere.  Normally we'd just use <img src="images/filename.jpg'>
+    $image_URL = "https://projectspace.nz/masseyhighschool/L1_unofficial_holidays/images/";
+
 while($find_rs=mysqli_fetch_assoc($find_query))
 
         {
@@ -15,6 +18,8 @@ while($find_rs=mysqli_fetch_assoc($find_query))
 
         // Format the date as 'day Month' (e.g. '2nd January')
         $formatted_date = $date_object -> format('jS F');
+        // $formatted_date = $date_object -> format('jS M');
+
 
         // Add in correct superscript using donated regular expression...
         $formatted_date = preg_replace('/(\d+)(st|nd|rd|th)/', '$1<sup>$2</sup>', $formatted_date);
@@ -30,15 +35,24 @@ while($find_rs=mysqli_fetch_assoc($find_query))
 
         <div class="results pad-20 radius-10 bottom-spacing" >
 
-            <!-- Category, Event name and date -->
-            <span class="category radius-10"><?= htmlspecialchars($find_rs['category']); ?></span>
-            <b><?= $event_name; ?> - <?= $formatted_date; ?></b>
+            <!-- Date tag -->
+            <div class="date-heading tag radius-10">
+            <?= $formatted_date; ?>
+            </div>  <!-- / date tag -->
+
+    
+            <!-- Event Name -->
+            <h3><?= $event_name; ?></h3>
+            
 
             <img class="results-image" src="<?= $image_path; ?>" alt="<?= $event_name; ?>">
 
             <p>
                 <?= htmlspecialchars($find_rs['description']); ?>
             </p>
+
+            <div class="category tag radius-10"><?= htmlspecialchars($find_rs['category']); ?></div>
+
 
         </div>  <!-- / result box -->
 
